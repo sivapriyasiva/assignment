@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sum of digits</title>
+    </head>
+    
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            
+        }
+        .container{
+            height: 100vh;
+            width:100vw;
+            display: flex;
+            gap:30px;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+        input{
+            height: 2rem;
+            width:15%;
+            padding-left: 10px;
+            outline:none;
+            border:none;
+            border-bottom: 1px solid gray;
+           
+        }
+        button{
+            height: 3rem;
+            width:7%;
+            padding:10px;
+            border-radius: 5px;
+            border:none;
+            background-color: cornflowerblue;
+            color:white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor:pointer;
+        }
+        button:hover{
+            background-color: blue;
+        }
+        p{
+            background-color: rgb(112, 110, 110);
+            color: #fff;
+            font-size: 18px;
+            height: auto;
+            width:auto;
+            padding-left:15px;
+            border-radius: 5px;
+            padding:5px;
+            display:none;
+        }
+    </style>
+    <body>
+        <div class="container">
+            Enter Number: <input id="user_input" type="number" placeholder="Enter your positive number">
+            <button id="btn" onclick="sumOfDigits()">Calculate</button>
+            <p id="result">Result: </p>
+
+            <script>
+                function sumOfDigits(){
+                    let input=document.getElementById("user_input").value;
+                    let button=document.getElementById("btn");
+                    let result=document.getElementById("result");
+                    let sum=0;
+                    let reminder = 0;
+
+                    while(input){
+                        reminder = input%10;
+                        sum = sum + reminder;
+                        input = Math.floor(input/10);
+                    }
+                    result.innerHTML += sum;
+                    result.style.display="block";
+
+                    
+                }
+
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Find the even</title>
+    </head>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+
+        }
+        .container{
+            height:100vh;
+            width:100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:25px;
+
+        }
+        input{
+            height: 2rem;
+            width:15%;
+            padding-left: 10px;
+            outline:none;
+            border:none;
+            border-bottom: 1px solid gray;
+        }
+        p{
+            background-color: rgb(112, 110, 110);
+            color: #fff;
+            font-size: 18px;
+            height: auto;
+            width:auto;
+            padding-left:15px;
+            border-radius: 5px;
+            padding:5px;
+            display:none;
+        }
+        button{
+            height: 3rem;
+            width:10%;
+            padding:10px;
+            border-radius: 5px;
+            border:none;
+            background-color: cornflowerblue;
+            color:white;
+            cursor:pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:hover{
+            background-color: blue;
+        }
+        
+    </style>
+    <body>
+        <div class="container">
+            
+                Number: <input id="num"  type="number" placeholder="Enter the number">
+                <button onclick="findEven()">check</button>
+                <p id="result">Result<br></p>
+            
+            <script>
+                function findEven(){
+                    let number=document.getElementById("num").value;
+                    let result=document.getElementById("result");
+
+                    for(let i=1;i<=number;i++){
+                        if(i%2==0){
+                            result.innerHTML += i + "<br>";
+                            result.style.display="block";
+                        }
+                    }
+                }
+                
+            </script>
+
+        </div>
+
+    </body>
+</html>

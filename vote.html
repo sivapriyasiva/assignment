@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>find voting eligiblity</title>
+    </head>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            
+        }
+        .container{
+            height: 100vh;
+            width:100vw;
+            display: flex;
+            gap:30px;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+        input{
+            height: 2rem;
+            width:15%;
+            padding-left: 10px;
+            outline:none;
+            border:none;
+            border-bottom: 1px solid gray;
+           
+        }
+        button{
+            height: 3rem;
+            width:7%;
+            border-radius: 5px;
+            border:none;
+            background-color: cornflowerblue;
+            color:white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor:pointer;
+        }
+        button:hover{
+            background-color: blue;
+        }
+        button[name="eligible"]{
+            background-color: green;
+        }
+        button[name="notEligible"]{
+            background-color: red;
+        }
+    </style>-->
+    <body>
+        <div class="container">
+            Age: <input id="age" type="number" placeholder="Enter your age">
+            <button id="btn" name="result" onclick="eligiblityCheck()">Result</button>
+        
+        <script>
+            function eligiblityCheck(){
+                let age=document.getElementById("age").value;
+                let result=document.getElementById("btn");
+                if(age>18){
+                    result.textContent="Eligible";
+                    result.setAttribute("name","eligible");
+                }
+                else{
+                    result.textContent="Not Eligible";
+                    result.setAttribute("name","notEligible");
+                }
+            }
+        </script>
+        </div>
+    </body>
+</html>

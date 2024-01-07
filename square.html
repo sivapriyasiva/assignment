@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+    <head>
+        <title>square </title>
+    </head>
+    
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .container{
+            height:100vh;
+            width:100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap:25px;
+            
+        }
+        input{
+            height: 2rem;
+            width:70%;
+            padding-left: 10px;
+            outline:none;
+            border:none;
+            border-bottom: 1px solid gray;
+        }
+        button{
+            height: 3rem;
+            width:10%;
+            padding:10px;
+            border-radius: 5px;
+            border:none;
+            background-color: cornflowerblue;
+            color:white;
+            font-size: 16px;
+            cursor:pointer;
+            font-weight: bold;
+        }
+        button:hover{
+            background-color: blue;
+        }
+        p{
+            background-color: rgb(112, 110, 110);
+            color: #fff;
+            font-size: 18px;
+            height: auto;
+            width:auto;
+            padding-left:15px;
+            border-radius: 5px;
+            padding:5px;
+            display:none;
+        }
+
+
+    </style>
+    <body>
+        <div class="container">
+            <div> Number:<input id="user_input_one" type="number" placeholder="Enter the number one"></div>
+            <div> Number: <input id="user_input_two" type="number" placeholder="Enter the number two"></div>
+            <div> Number: <input id="user_input_three" type="number" placeholder="Enter the number three"></div>
+            <div> Number: <input id="user_input_four" type="number" placeholder="Enter the number four"></div>
+            <div> Number: <input id="user_input_five" type="number" placeholder="Enter the number five"></div>
+            <button id="btn" onclick="square()">conert square</button>
+            <p id="square_value">Result: </p>
+
+            <script>
+                function square(){
+
+                    let input_one=document.getElementById("user_input_one").value;
+                    let input_two=document.getElementById("user_input_two").value;
+                    let input_three=document.getElementById("user_input_three").value;
+                    let input_four=document.getElementById("user_input_four").value;
+                    let input_five=document.getElementById("user_input_five").value;
+
+                    let button=document.getElementById("btn");
+                    let result=document.getElementById("square_value");
+
+                    let arr=[input_one,input_two,input_three,input_four,input_five];
+                    let square=arr.map((num)=>num*num);
+                    result.innerHTML+=square+"<br>";
+                    result.style.display="block";
+                }
+                
+            </script>
+        </div>
+    </body>
+</html>
+<!--
+    const arr=[1,2,3,4,5];
+
+square=arr.map((num)=>num*num);
+
+console.log(square);
+
+-->
+
+<!--
+    let a=1;
+undefined
+let b=2;
+undefined
+let c=3;
+undefined
+let d=4;
+undefined
+let e=5;
+undefined
+let arr=[a,b,c,d,e];
+undefined
+console.log(arr);
+VM333:1 (5) [1, 2, 3, 4, 5]
+undefined
+let square = arr.map((num)=> num*num);
+undefined
+console.log(square);
+VM544:1 (5) [1, 4, 9, 16, 25]
+-->
